@@ -1,8 +1,6 @@
-use word_count;
-
 fn main() {
-    let option = std::env::args().nth(1).expect("Option not found");
-    let file_path = std::env::args().nth(2).expect("");
+    let option = std::env::args().nth(1).expect("Option (-c, -l or -w) not provided");
+    let file_path = std::env::args().nth(2).expect("File path not provided");
 
     let content = std::fs::read_to_string(&file_path).expect("could not read file");
 
@@ -24,5 +22,5 @@ fn line_counts(input_text: String) -> usize {
     return input_text.lines().count();
 }
 
-fn word_counts(input_text: String) -> usize {
-}
+// fn word_counts(input_text: String) -> usize {
+// }
